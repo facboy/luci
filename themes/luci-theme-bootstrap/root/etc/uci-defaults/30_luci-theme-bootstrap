@@ -4,7 +4,7 @@ if [ "$PKG_UPGRADE" != 1 ]; then
 	uci get luci.themes.Bootstrap >/dev/null 2>&1 || \
 	uci batch <<-EOF
 		set luci.themes.Bootstrap=/luci-static/bootstrap
-		set luci.main.mediaurlbase=/luci-static/bootstrap
+#		set luci.main.mediaurlbase=/luci-static/bootstrap
 		commit luci
 	EOF
 fi
