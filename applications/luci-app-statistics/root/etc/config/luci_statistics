@@ -23,7 +23,7 @@ config statistics 'collectd_rrdtool'
 	option RRARows '288'
 	option RRASingle '1'
 	option RRATimespans '2hour 1day 1week 1month 1year'
-	option backup '0'
+	option backup '1'
 
 config statistics 'collectd_csv'
 	option enable '0'
@@ -68,7 +68,7 @@ config statistics 'collectd_chrony'
 	option Timeout '2'
 
 config statistics 'collectd_conntrack'
-	option enable '0'
+	option enable '1'
 
 config statistics 'collectd_contextswitch'
 	option enable '0'
@@ -81,7 +81,8 @@ config statistics 'collectd_cpu'
 	option ValuesPercentage '1'
 
 config statistics 'collectd_cpufreq'
-	option enable '0'
+	option enable '1'
+	option ExtraItems '1'
 
 config statistics 'collectd_curl'
 	option enable '0'
@@ -115,10 +116,10 @@ config statistics 'collectd_exec'
 	option enable '0'
 
 #example for sqm_collect plugin
-#config collectd_exec_input
-#        option cmduser 'nobody'
-#        option cmdgroup 'nogroup'
-#        option cmdline '/usr/libexec/collectd/sqm_collectd.sh eth0 ifb4eth0'
+config collectd_exec_input
+        option cmduser 'nobody'
+        option cmdgroup 'nogroup'
+        option cmdline '/usr/libexec/collectd/sqm_collectd.sh eth0.2'
 
 config statistics 'collectd_interface'
 	option enable '1'
@@ -209,9 +210,9 @@ config statistics 'collectd_tcpconns'
 	option AllPortsSummary '0'
 
 config statistics 'collectd_thermal'
-	option enable '0'
-	option IgnoreSelected '0'
-	option Device ''
+	option enable '1'
+	option IgnoreSelected '1'
+	option Device 'cooling_device0 cooling_device1'
 
 config statistics 'collectd_uptime'
 	option enable '0'
